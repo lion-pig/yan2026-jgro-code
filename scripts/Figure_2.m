@@ -8,7 +8,7 @@ set(gcf, 'units', 'centimeters', 'position', [1, 1, 22, 15]);
 ax1 = subplot(2,1,1);
 hold on
 % read data
-SOUTHEST_JMA = readtable("G:\JMA_data\Monthly latitude of the Kuroshio axis between 136 to 140.txt");
+SOUTHEST_JMA = readtable("..\data\JMA\Monthly latitude of the Kuroshio axis between 136 to 140.txt");
 % 2. transform txt to matrix (JMA)
 Time = [];
 for i = 1 : height(SOUTHEST_JMA)
@@ -66,7 +66,7 @@ hold off
 %% 2. SEA LEVEL DIFFERENCE
 ax2 = subplot(2,1,2);
 hold on
-ssh_diff_jma = readtable("G:\JMA_data\Sea surface difference between Kushimoto and Uragami.txt");
+ssh_diff_jma = readtable("..\data\JMA\Sea surface difference between Kushimoto and Uragami.txt");
 Time = [];
 for i = 1 : height(ssh_diff_jma)
     time_table = ssh_diff_jma(i, "Var1");
@@ -119,4 +119,4 @@ xl=xlim;
 yl=ylim;
 text(xl(1)+(xl(2)-xl(1))/20,yl(1)+(yl(2)-yl(1))/10,"b.","FontSize",24,"FontWeight","bold")
 %% save figure
-% saveas(gcf, "Results\Figure\I_Paper\Figure_1_2.jpg")
+% saveas(gcf, "..\figure\Figure_2.jpg")
