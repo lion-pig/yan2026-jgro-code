@@ -13,14 +13,14 @@ ax.Position(3) = ax.Position(3)-0.12;
 ax.Position(4) = ax.Position(4)+0.14;
 hold on
 % read global topo data
-x = ncread('G:\ETOPO\ETOPO1_Bed_c_gmt4.grd', 'x');
-y = ncread('G:\ETOPO\ETOPO1_Bed_c_gmt4.grd', 'y');
-z = ncread('G:\ETOPO\ETOPO1_Bed_c_gmt4.grd', 'z');
+x = ncread('..\data\ETOPO\ETOPO1_Bed_c_gmt4.grd', 'x');
+y = ncread('..\data\ETOPO\ETOPO1_Bed_c_gmt4.grd', 'y');
+z = ncread('..\data\ETOPO\ETOPO1_Bed_c_gmt4.grd', 'z');
 x(x<0) = x(x<0)+360;
 [x, idx] = sort(x);
 z = z(idx,:);
-x_t = readmatrix("Results\Data\x_t.csv");
-y_t = readmatrix("Results\Data\y_t.csv");
+x_t = readmatrix("..\data\x_t.csv");
+y_t = readmatrix("..\data\y_t.csv");
 lonl_figure = 100;
 lonr_figure = 190;
 latb_figure = 0;
@@ -43,8 +43,8 @@ z_t_figure = z(x>=lonl_figure & x<=lonr_figure, ...
                y>=latb_figure & y<=latt_figure);
 [X_T_figure, Y_T_figure] = meshgrid(x_t_figure, y_t_figure);
 % Kuroshio current
-nc_file_uo = "G:\CMS\Global Ocean Physics Reanalysis\uo_glo_phy_2017.nc";
-nc_file_vo = "G:\CMS\Global Ocean Physics Reanalysis\vo_glo_phy_2017.nc";
+nc_file_uo = "..\data\CMS\Global Ocean Physics Reanalysis\uo_glo_phy_2017.nc";
+nc_file_vo = "..\data\CMS\Global Ocean Physics Reanalysis\vo_glo_phy_2017.nc";
 uo = ncread(nc_file_uo,'uo');
 uo = reshape(uo,size(uo,1),size(uo,2),size(uo,4));
 uo_ave = mean(uo,3)';
@@ -147,9 +147,9 @@ ax.Position(3) = ax.Position(3)-0.12;
 ax.Position(4) = ax.Position(4)+0.02;
 hold on
 % READ DATA
-x_t = readmatrix("Results\Data\x_t.csv");
-y_t = readmatrix("Results\Data\y_t.csv");
-z_d = readmatrix("Results\Data\z_d.csv");
+x_t = readmatrix("..\data\x_t.csv");
+y_t = readmatrix("..\data\y_t.csv");
+z_d = readmatrix("..\data\z_d.csv");
 [X_T,Y_T] = meshgrid(x_t,y_t);
 nx = length(x_t);
 ny = length(y_t);
@@ -163,7 +163,7 @@ lonr_target = 141;
 latb_target = 30;
 latt_target = 35;
 % topo
-U_ave_var = read_dat_data("Results\Data\U_ave_20180101_20181231.dat");
+U_ave_var = read_dat_data("..\data\U_ave_20180101_20181231.dat");
 U_ave = reshape(U_ave_var,nx,ny,nz);
 figure
 colorMap = colormap("gray");
@@ -179,17 +179,17 @@ h.TickLabels = string(topo_depth)+"m";
 h.Position = [ax.Position(1)+ax.Position(3)+0.04,ax.Position(2),0.02,ax.Position(4)];
 ylabel(h,"Depth")
 % nNLM path
-lon_lat_nnlm = readmatrix("Results\Data\Kuroshio_nNLM_schematic_position.csv");
+lon_lat_nnlm = readmatrix("..\data\Kuroshio_nNLM_schematic_position.csv");
 lon_nnlm = lon_lat_nnlm(:,1);
 lat_nnlm = lon_lat_nnlm(:,2);
 plot(lon_nnlm,lat_nnlm,"b-","LineWidth",3);
 % oNLM path
-lon_lat_onlm = readmatrix("Results\Data\Kuroshio_oNLM_schematic_position.csv");
+lon_lat_onlm = readmatrix("..\data\Kuroshio_oNLM_schematic_position.csv");
 lon_onlm = lon_lat_onlm(:,1);
 lat_onlm = lon_lat_onlm(:,2);
 plot(lon_onlm,lat_onlm,"Color",[0, 153, 0]/255,"LineStyle","-","LineWidth",3)
 % LM path
-lon_lat_lm = readmatrix("Results\Data\Kuroshio_LM_schematic_position.csv");
+lon_lat_lm = readmatrix("..\data\Kuroshio_LM_schematic_position.csv");
 lon_lm = lon_lat_lm(:,1);
 lat_lm = lon_lat_lm(:,2);
 plot(lon_lm,lat_lm,"r-","LineWidth",3);
@@ -257,4 +257,4 @@ text(136.2,33.5,"Enshu-nada",...
 set(gca,"LineWidth",1.5,"FontSize",14,"TickDir","both")
 % hold off
 %% save figure
-saveas(gcf, "Results\Figure\I_Paper\Figure_1_1_JCOPET_domain.jpg")
+saveas(gcf, "..\figure\Figure_1.jpg")
