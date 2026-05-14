@@ -19,8 +19,8 @@ z = ncread('..\data\ETOPO\ETOPO1_Bed_c_gmt4.grd', 'z');
 x(x<0) = x(x<0)+360;
 [x, idx] = sort(x);
 z = z(idx,:);
-x_t = readmatrix("..\data\x_t.csv");
-y_t = readmatrix("..\data\y_t.csv");
+x_t = readmatrix("..\data\JCOPE-T\x_t.csv"); % x_t.csv is the longitude grid array for JCOPE-T data in the available domain (unit:degree)
+y_t = readmatrix("..\data\JCOPE-T\y_t.csv"); % y_t.csv is the latitude grid array for JCOPE-T data in the available domain (unit: degree)
 lonl_figure = 100;
 lonr_figure = 190;
 latb_figure = 0;
@@ -147,9 +147,9 @@ ax.Position(3) = ax.Position(3)-0.12;
 ax.Position(4) = ax.Position(4)+0.02;
 hold on
 % READ DATA
-x_t = readmatrix("..\data\x_t.csv");
-y_t = readmatrix("..\data\y_t.csv");
-z_d = readmatrix("..\data\z_d.csv");
+x_t = readmatrix("..\data\JCOPE-T\x_t.csv");
+y_t = readmatrix("..\data\JCOPE-T\y_t.csv");
+z_d = readmatrix("..\data\JCOPE-T\z_d.csv"); % z_d.csv is the vertical grid array for JCOPE-T data in the available domain (unit: m)
 [X_T,Y_T] = meshgrid(x_t,y_t);
 nx = length(x_t);
 ny = length(y_t);
@@ -163,7 +163,7 @@ lonr_target = 141;
 latb_target = 30;
 latt_target = 35;
 % topo
-U_ave_var = read_dat_data("..\data\U_ave_20180101_20181231.dat");
+U_ave_var = read_dat_data("..\data\JCOPE-T\U_ave_20180101_20181231.dat"); % this is the 3-D annual average of horizontal velocity of JCOPE-T data in 2018
 U_ave = reshape(U_ave_var,nx,ny,nz);
 figure
 colorMap = colormap("gray");
@@ -179,17 +179,17 @@ h.TickLabels = string(topo_depth)+"m";
 h.Position = [ax.Position(1)+ax.Position(3)+0.04,ax.Position(2),0.02,ax.Position(4)];
 ylabel(h,"Depth")
 % nNLM path
-lon_lat_nnlm = readmatrix("..\data\Kuroshio_nNLM_schematic_position.csv");
+lon_lat_nnlm = readmatrix("..\data\Path\Kuroshio_nNLM_schematic_position.csv");
 lon_nnlm = lon_lat_nnlm(:,1);
 lat_nnlm = lon_lat_nnlm(:,2);
 plot(lon_nnlm,lat_nnlm,"b-","LineWidth",3);
 % oNLM path
-lon_lat_onlm = readmatrix("..\data\Kuroshio_oNLM_schematic_position.csv");
+lon_lat_onlm = readmatrix("..\data\Path\Kuroshio_oNLM_schematic_position.csv");
 lon_onlm = lon_lat_onlm(:,1);
 lat_onlm = lon_lat_onlm(:,2);
 plot(lon_onlm,lat_onlm,"Color",[0, 153, 0]/255,"LineStyle","-","LineWidth",3)
 % LM path
-lon_lat_lm = readmatrix("..\data\Kuroshio_LM_schematic_position.csv");
+lon_lat_lm = readmatrix("..\data\Path\Kuroshio_LM_schematic_position.csv");
 lon_lm = lon_lat_lm(:,1);
 lat_lm = lon_lat_lm(:,2);
 plot(lon_lm,lat_lm,"r-","LineWidth",3);
