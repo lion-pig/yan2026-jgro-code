@@ -1,0 +1,10 @@
+The JCOPE-T dataset analysed in this study (Japan Agency for Marine-Earth Science and Technology, 2026; Varlamov et al., 2015) is restricted due to institutional policy and commercial licensing agreements and therefore cannot be made publicly available in an open repository. Information about the JCOPE project and data access procedures can be found on the official JCOPE website https://www.jamstec.go.jp/jcope/htdocs/e/distribution/index.html.
+
+
+
+
+Reference:
+
+Japan Agency for Marine-Earth Science and Technology. (2026). JCOPE ocean forecast and reanalysis system data distribution. [Dataset]. https://www.jamstec.go.jp/jcope/htdocs/e/distribution/index.html
+
+Varlamov, S. M., Guo, X., Miyama, T., Ichikawa, K., Waseda, T., & Miyazawa, Y. (2015). M2 baroclinic tide variability modulated by the ocean circulation south of Japan. Journal of Geophysical Research: Oceans, 120(5), 3681–3710. https://doi.org/10.1002/2015JC010739
