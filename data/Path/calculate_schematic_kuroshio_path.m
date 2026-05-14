@@ -2,9 +2,9 @@ clc;
 clear;
 
 %% READ DATA
-x_t = readmatrix("Results\Data\x_t.csv");
-y_t = readmatrix("Results\Data\y_t.csv");
-z_d = readmatrix("Results\Data\z_d.csv");
+x_t = readmatrix("..\data\Path\x_t.csv");
+y_t = readmatrix("..\data\Path\y_t.csv");
+z_d = readmatrix("..\data\Path\z_d.csv");
 [X_T,Y_T] = meshgrid(x_t,y_t);
 nx = length(x_t);
 ny = length(y_t);
@@ -23,7 +23,7 @@ ax.Position(3) = ax.Position(3)-0.12;
 ax.Position(4) = ax.Position(4)-0.3;
 hold on
 %% topo
-U_ave_var = read_dat_data("Results\Data\U_ave_20180101_20181231.dat");
+U_ave_var = read_dat_data("..\data\JCOPE-T\U_ave_20180101_20181231.dat");
 U_ave = reshape(U_ave_var,nx,ny,nz);
 figure
 colorMap = colormap("gray");
@@ -73,7 +73,7 @@ yticklabels(ytickLabels);
 %      "b.","FontSize",22,"FontWeight","bold")
 set(gca,"LineWidth",1,"FontSize",14,"TickDir","both")
 %% LM path
-EL_LM_var = read_dat_data("Results\Data\EL_ave_20180101_20181231.dat");
+EL_LM_var = read_dat_data("..\data\JCOPE-T\EL_ave_20180101_20181231.dat"); % 3-D annual average of ssh of JCOPE-T data in 2018 (unit: m)
 EL_LM_var(EL_LM_var>10^10)=nan;
 EL_LM = reshape(EL_LM_var,nx,ny)';
 % contourf(X_T,Y_T,EL_LM)
@@ -85,9 +85,9 @@ close
 % lat_lm = lat_lm(idx);
 lat_lm = lat_lm+0.2;
 plot(lon_lm,lat_lm,"r-","LineWidth",3)
-writematrix([lon_lm',lat_lm'],"Results\Data\Kuroshio_LM_schematic_position.csv")
+writematrix([lon_lm',lat_lm'],"..\data\Path\Kuroshio_LM_schematic_position.csv")
 %% nNLM
-EL_nNLM_var = read_dat_data("Results\Data\EL_ave_20160101_20161231.dat");
+EL_nNLM_var = read_dat_data("..\data\JCOPE-T\EL_ave_20160101_20161231.dat"); % 3-D annual average of ssh of JCOPE-T data in 2016 (unit: m)
 EL_nNLM_var(EL_nNLM_var>10^10)=nan;
 EL_nNLM = reshape(EL_nNLM_var,nx,ny)';
 % contourf(X_T,Y_T,EL_nNLM)
@@ -108,9 +108,9 @@ lat_nnlm_new = interp1(lon_nnlm([1:cc-300,cc:1:end]),...
 lat_nnlm_neww = movmean(lat_nnlm_new(cd:end),40);
 lat_nnlm_new = cat(2,lat_nnlm_new(1:cd+19),lat_nnlm_neww(21:end));
 plot(lon_nnlm_new,lat_nnlm_new,"b-","LineWidth",3)
-writematrix([lon_nnlm_new',lat_nnlm_new'],"Results\Data\Kuroshio_nNLM_schematic_position.csv")
+writematrix([lon_nnlm_new',lat_nnlm_new'],"..\data\Path\Kuroshio_nNLM_schematic_position.csv")
 %% oNLM
-EL_oNLM_var = read_dat_data("Results\Data\EL_ave_20150101_20151231.dat");
+EL_oNLM_var = read_dat_data("..\data\JCOPE-T\EL_ave_20150101_20151231.dat"); % 3-D annual average of ssh of JCOPE-T data in 2015 (unit: m)
 EL_oNLM_var(EL_oNLM_var>10^10)=nan;
 EL_oNLM = reshape(EL_oNLM_var,nx,ny)';
 % contourf(X_T,Y_T,EL_oNLM)
@@ -135,4 +135,4 @@ lat_onlm_new = cat(2,lat_onlm_new(1:cg+25),...
                      lat_onlm_new(ch-9:end));
 lat_onlm_new = movmean(lat_onlm_new,5);
 plot(lon_onlm_new,lat_onlm_new,"g-","LineWidth",3)
-writematrix([lon_onlm_new',lat_onlm_new'],"Results\Data\Kuroshio_oNLM_schematic_position.csv")
+writematrix([lon_onlm_new',lat_onlm_new'],"..\data\Path\Kuroshio_oNLM_schematic_position.csv")
