@@ -1,0 +1,5 @@
+Bathymetric data used in Figure 1a were obtained from the ETOPO1 1 arc-minute global relief model provided by the NOAA National Geophysical Data Center (2009), available at https://doi.org/10.7289/V5C8276M.
+
+You can download ETOPO1_Bed_c_gmt4.grd.gz directly from NOAA’s archived ETOPO1 data directory:
+
+https://www.ngdc.noaa.gov/mgg/global/relief/ETOPO1/data/bedrock/cell_registered/netcdf/ETOPO1_Bed_c_gmt4.grd.gz
