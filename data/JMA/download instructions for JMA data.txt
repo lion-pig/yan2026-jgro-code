@@ -1,0 +1,1 @@
+Time series of the southernmost latitude of the Kuroshio axis between 136°E and 140°E and the sea level difference between the Kushimoto and Uragami tide gauge stations, both provided by the Japan Meteorological Agency (JMA), are available at https://www.data.jma.go.jp/kaiyou/data/shindan/b_2/kuroshio_stream/kuroshio_stream.html.
