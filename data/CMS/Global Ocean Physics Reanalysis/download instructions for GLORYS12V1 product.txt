@@ -1,0 +1,7 @@
+The GLORYS12V1 global ocean reanalysis product (Copernicus Marine Service, 2023; Jean-Michel et al., 2021) is available from the Copernicus Marine Service at https://doi.org/10.48670/moi-00021.
+
+Reference:
+
+Copernicus Marine Service. (2023). Global Ocean Physics Reanalysis (GLORYS12V1) [Dataset]. https://doi.org/10.48670/moi-00021
+
+Jean-Michel, L., Eric, G., Romain, B.-B., Gilles, G., Angélique, M., Marie, D., Clément, B., Mathieu, H., Olivier, L. G., Charly, R., Tony, C., Charles-Emmanuel, T., Florent, G., Giovanni, R., Mounir, B., Yann, D., & Pierre-Yves, L. T. (2021). The Copernicus Global 1/12° Oceanic and Sea Ice GLORYS12 Reanalysis. Frontiers in Earth Science, 9, 698876. https://doi.org/10.3389/feart.2021.698876
