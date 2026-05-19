@@ -27,7 +27,7 @@ for var_str = var_name
     
         var_n = var(:,:,dt);
         
-        var_filename = "daily/" + var_str + "_" + t_strc + ".dat";
+        var_filename = var_str + "_" + t_strc + ".dat";
         
         save_dat_data(var_filename, var_n);
     
