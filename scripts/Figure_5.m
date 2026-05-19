@@ -49,7 +49,7 @@ W_lyr = W(:,:,dep_idx)';
 T_var = read_dat_data("..\data\JCOPE-T\T_2017010112.dat");
 T_var(T_var > 1*10^20) = nan;
 T = reshape(T_var,nx,ny,nz);
-T_lyr = W(:,:,15)';
+T_lyr = T(:,:,15)';
 
 % shading
 [var_shading_lyr,var_shading_range,c_shading_range,h_shading_tick,c_shading_map,c_shading_label] = ...
@@ -131,7 +131,7 @@ W_lyr = W(:,:,dep_idx)';
 T_var = read_dat_data("..\data\JCOPE-T\T_2017010112.dat");
 T_var(T_var > 1*10^20) = nan;
 T = reshape(T_var,nx,ny,nz);
-T_lyr = W(:,:,15)';
+T_lyr = T(:,:,15)';
 
 % shading
 [var_shading_lyr,var_shading_range,c_shading_range,h_shading_tick,c_shading_map,c_shading_label] = ...
@@ -223,7 +223,7 @@ Zeta_lyr = Zeta(:,:,dep_idx)';
 T_var = read_dat_data("..\data\JCOPE-T\T_2017010112.dat");
 T_var(T_var > 1*10^20) = nan;
 T = reshape(T_var,nx,ny,nz);
-T_lyr = W(:,:,15)';
+T_lyr = T(:,:,15)';
 
 % shading
 [var_shading_lyr,var_shading_range,c_shading_range,h_shading_tick,c_shading_map,c_shading_label] = ...
