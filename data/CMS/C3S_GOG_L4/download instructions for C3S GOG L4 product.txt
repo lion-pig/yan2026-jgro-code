@@ -1,0 +1,1 @@
+The DUACS delayed-time multi-satellite altimeter gridded sea level product, distributed by the Copernicus Climate Change Service, is available at https://doi.org/10.48670/moi-00145. 
