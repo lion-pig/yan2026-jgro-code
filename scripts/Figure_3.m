@@ -49,10 +49,10 @@ for dt = DT
     disp(t_strc)
 
     % read velocity data
-    ugos = read_dat_data(adt_folder + "daily\ugos_" + t_strc + ".dat");    
+    ugos = read_dat_data(adt_folder + "ugos_" + t_strc + ".dat");    
     ugos(ugos < -10^9) = nan;
     ugos = reshape(ugos, nx_adt, ny_adt)';
-    vgos = read_dat_data(adt_folder + "daily\vgos_" + t_strc + ".dat");
+    vgos = read_dat_data(adt_folder + "vgos_" + t_strc + ".dat");
     vgos(vgos < -10^9) = nan;
     vgos = reshape(vgos, nx_adt, ny_adt)';
     ugos_domain = ugos(latb_adt_idx:latt_adt_idx,lonl_adt_idx:lonr_adt_idx);
@@ -61,7 +61,7 @@ for dt = DT
     vgos_domain_sum = vgos_domain_sum + vgos_domain;
 
     % read sea surface height
-    adt = read_dat_data(adt_folder+"daily\adt_" + t_strc + ".dat");
+    adt = read_dat_data(adt_folder+"adt_" + t_strc + ".dat");
     adt(adt < -10^9) = nan;
     adt = reshape(adt, nx_adt, ny_adt)';
     adt_domain = adt(latb_adt_idx:latt_adt_idx,lonl_adt_idx:lonr_adt_idx);
