@@ -1,8 +1,8 @@
 function [theta_d,xrange,yrange,X_V,Z_D] = Find_line_point(Var_str,t_strc)
 
-x_t = readmatrix("x_t.csv");
-y_t = readmatrix("y_t.csv");
-z_d = readmatrix("z_d.csv") * 10^-3; % km
+x_t = readmatrix("..\data\JCOPE-T\x_t.csv");
+y_t = readmatrix("..\data\JCOPE-T\y_t.csv");
+z_d = readmatrix("..\data\JCOPE-T\z_d.csv") * 10^-3; % km
 
 [theta_d,xmin_degree,xmax_degree,ymin_degree] = K_line_parameter(t_strc,Var_str);
 k = tan(theta_d/180*pi); % line slope
