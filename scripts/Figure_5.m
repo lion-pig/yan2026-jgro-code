@@ -34,19 +34,19 @@ ax.Position(3) = ax.Position(3)-0.02;
 hold on
 
 % read data
-U_var = read_dat_data("U_2017010112.dat");
+U_var = read_dat_data("..\data\JCOPE-T\U_2017010112.dat");
 U_var(U_var > 1*10^20) = nan;
 U = reshape(U_var,nx,ny,nz);
 U_lyr = U(:,:,dep_idx)';
-V_var = read_dat_data("V_2017010112.dat");
+V_var = read_dat_data("..\data\JCOPE-T\V_2017010112.dat");
 V_var(V_var > 1*10^20) = nan;
 V = reshape(V_var,nx,ny,nz);
 V_lyr = V(:,:,dep_idx)';
-W_var = read_dat_data("W_2017010112.dat");
+W_var = read_dat_data("..\data\JCOPE-T\W_2017010112.dat");
 W_var(W_var > 1*10^20) = nan;
 W = reshape(W_var,nx,ny,nz);
 W_lyr = W(:,:,dep_idx)';
-T_var = read_dat_data("T_2017010112.dat");
+T_var = read_dat_data("..\data\JCOPE-T\T_2017010112.dat");
 T_var(T_var > 1*10^20) = nan;
 T = reshape(T_var,nx,ny,nz);
 T_lyr = W(:,:,15)';
@@ -116,18 +116,22 @@ ax.Position(3) = ax.Position(3)-0.02;
 hold on
 
 % read data
-U_var = read_dat_data("U_"+date_str+"12.dat");
+U_var = read_dat_data("..\data\JCOPE-T\U_"+date_str+"12.dat");
 U_var(U_var > 1*10^20) = nan;
 U = reshape(U_var,nx,ny,nz);
 U_lyr = U(:,:,dep_idx)';
-V_var = read_dat_data("V_"+date_str+"12.dat");
+V_var = read_dat_data("..\data\JCOPE-T\V_"+date_str+"12.dat");
 V_var(V_var > 1*10^20) = nan;
 V = reshape(V_var,nx,ny,nz);
 V_lyr = V(:,:,dep_idx)';
-W_var = read_dat_data("W_"+date_str+"12.dat");
+W_var = read_dat_data("..\data\JCOPE-T\W_"+date_str+"12.dat");
 W_var(W_var > 1*10^20) = nan;
 W = reshape(W_var,nx,ny,nz);
 W_lyr = W(:,:,dep_idx)';
+T_var = read_dat_data("..\data\JCOPE-T\T_2017010112.dat");
+T_var(T_var > 1*10^20) = nan;
+T = reshape(T_var,nx,ny,nz);
+T_lyr = W(:,:,15)';
 
 % shading
 [var_shading_lyr,var_shading_range,c_shading_range,h_shading_tick,c_shading_map,c_shading_label] = ...
@@ -205,17 +209,21 @@ ax.Position(3) = ax.Position(3)-0.02;
 hold on
 
 % read data
-U_var = read_dat_data("U_"+date_str+"12.dat");
+U_var = read_dat_data("..\data\JCOPE-T\U_"+date_str+"12.dat");
 U_var(U_var > 1*10^20) = nan;
 U = reshape(U_var,nx,ny,nz);
 U_lyr = U(:,:,dep_idx)';
-V_var = read_dat_data("V_"+date_str+"12.dat");
+V_var = read_dat_data("..\data\JCOPE-T\V_"+date_str+"12.dat");
 V_var(V_var > 1*10^20) = nan;
 V = reshape(V_var,nx,ny,nz);
 V_lyr = V(:,:,dep_idx)';
-Zeta_var = read_dat_data("Zeta_"+date_str+"12.dat");
+Zeta_var = read_dat_data("..\data\JCOPE-T\Zeta_"+date_str+"12.dat");
 Zeta = reshape(Zeta_var,nx,ny,nz);
 Zeta_lyr = Zeta(:,:,dep_idx)';
+T_var = read_dat_data("..\data\JCOPE-T\T_2017010112.dat");
+T_var(T_var > 1*10^20) = nan;
+T = reshape(T_var,nx,ny,nz);
+T_lyr = W(:,:,15)';
 
 % shading
 [var_shading_lyr,var_shading_range,c_shading_range,h_shading_tick,c_shading_map,c_shading_label] = ...
@@ -286,6 +294,11 @@ ax.Position(1) = ax.Position(1)-0.08;
 ax.Position(3) = ax.Position(3)-0.02;
 hold on
 
+% read data
+W_var = read_dat_data("..\data\JCOPE-T\W_"+date_str+"12.dat");
+W_var(W_var > 1*10^20) = nan;
+W = reshape(W_var,nx,ny,nz);
+
 % w shading
 [~,line_xrange,line_yrange,X_V,Z_D] = Find_line_point("W",date_str);
 Var_shading = Find_line_var(W,line_xrange,line_yrange,x_t,y_t);
@@ -338,7 +351,7 @@ ax.Position(3) = ax.Position(3)-0.05;
 hold on
 
 % read data
-W_region_ave = readmatrix("W_regional_ave_on_"+date_str+"_in_135_136_32_33.csv");
+W_region_ave = readmatrix("..\data\JCOPE-T\W_regional_ave_on_"+date_str+"_in_135_136_32_33.csv");
 W_region_ave = W_region_ave * 1000;
 % figure
 plot(W_region_ave, -z_d*10^(-3), "LineWidth", 2, "Color", "k");
@@ -376,7 +389,7 @@ ax.Position(3) = ax.Position(3)-0.02;
 hold on
 
 % read data
-Zeta_var = read_dat_data("ZETA_"+date_str+"12.dat");
+Zeta_var = read_dat_data("..\data\JCOPE-T\ZETA_"+date_str+"12.dat");
 Zeta_var(Zeta_var > 1*10^20) = nan;
 Zeta = reshape(Zeta_var,nx,ny,nz);
 % zeta shading
