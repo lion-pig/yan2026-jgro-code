@@ -35,7 +35,7 @@ while M_i <= size(var_c, 2)
             t_end_m = t_end_num(2);
             t_end_d = t_end_num(3);
             [~,~,~,t_end_str] = time_str(t_end_d,t_end_m,t_end_y,0);                
-            ka_i = readmatrix("KA\ka_" + t_end_str + ".csv");
+            ka_i = readmatrix("..\data\JCOPE-T\KA\ka_" + t_end_str + ".csv");
             yi_end = ka_i(2, find(abs(ka_i(1, :)-xi_end) == min(abs(ka_i(1,:)-xi_end)), 1, "first"));
             T_X_Y_END = cat(1, T_X_Y_END, [t_end_num, xi_end, yi_end, ti_end]);                    
         end
